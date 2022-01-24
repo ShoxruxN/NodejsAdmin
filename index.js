@@ -18,7 +18,7 @@ const profileRouter = require('./router/profile')
 // middleWare lar
 const varMid = require('./middleware/var')
 const fileMiddleware = require('./middleware/file')
-const keys = require('./keys/dev')
+const keys = require('./keys/pro')
 
 const app = express()
 const hbs = exphbs.create({
