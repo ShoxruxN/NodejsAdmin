@@ -1,0 +1,54 @@
+{{#if error}}
+  <div class="row justify-content-center mb-2">
+    <div class="col-xl-5 col-lg-5 col-md-5">
+      <div class="card bg-danger text-white shadow">
+          <div class="card-body">{{error}}</div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if success}}
+  <div class="row justify-content-center mb-2">
+    <div class="col-xl-5 col-lg-5 col-md-5">
+      <div class="card bg-success text-white shadow">
+          <div class="card-body">{{success}}</div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+<form action="/profile/save" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-3">
+            <input type="hidden" name="_id" value="{{user._id}}">
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <img src="/{{user.img}}" alt="" style="width:100%">
+            <label><b>Yangi avatar yuklash</b>
+                <input type="file" name="img"></label>
+        </div>
+        <div class="col-lg-8">
+            <div class="row align-items-center mb-2">
+                <div class="col-lg-2"><span class="mr-2">Ismi:</span></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="name" value="{{user.name}}">
+                </div>
+            </div>
+            <div class="row align-items-center mb-2">
+                <div class="col-lg-2"><span class="mr-2">Familiyasi:</span></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="lname" value="{{user.lname}}">
+                </div>
+            </div>
+            <div class="row align-items-center mb-2">
+                <div class="col-lg-2"><span class="mr-2">Email:</span></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="email" value="{{user.email}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary">
+        O'zgarishlarni saqlash
+    </button>
+</form>
+

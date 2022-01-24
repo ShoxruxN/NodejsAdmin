@@ -1,0 +1,52 @@
+<div class="book__view">
+    <div class="row">
+        <div class="col-lg-4 col-md-4">
+            <img src="/{{book.img}}" alt="{{book.name}} | {{book.author}}">
+        </div>
+        <div class="col-lg-8 col-md-8">
+            <div class="d-flex">
+                <a class="btn btn-info mb-4" href="/book/edit/{{book._id}}">
+                    <i class="fas fa-pen mr-2"></i>
+                    Tahrirlash
+                </a>
+                <form action="/book/del/" method="post" onSubmit="return confirm('Aniqmi?');" class="ml-3">
+                    <input type="hidden" name="_csrf" value="{{csrf}}">
+                    <input type="hidden" name="_id" value="{{book._id}}">
+                    <button class="btn btn-danger mb-4 mr-4">
+                        <i class="fas fa-trash mr-2"></i>
+                        O'chirish
+                    </button>
+                </form>
+            </div>
+            <div class="book__title">Muallifi:</div>
+            <div class="book__value">{{book.author}}</div>
+            <div class="book__title">Janri:</div>
+            <div class="book__value">{{book.genreId.name}}</div>
+            <div class="book__title">Narhi:</div>
+            <div class="book__value">{{book.price}} so'm</div>
+            <div class="book__title">Soni:</div>
+            <div class="book__value">{{book.count}}</div>
+            <div class="book__title">Ishlab chiqarilgan yili:</div>
+            <div class="book__value">{{book.year}}</div>
+            <div class="book__title">Betlar soni:</div>
+            <div class="book__value">{{book.page}}</div>
+            <div class="book__title">Tili:</div>
+            <div class="book__value">{{book.lang}}</div>
+            <div class="book__title">Choq etuvchi:</div>
+            <div class="book__value">{{book.publisher}}</div>
+            <div class="book__title">Kitob turi:</div>
+            <div class="book__value">{{book.type}}</div>
+            <div class="book__title">ISBN:</div>
+            <div class="book__value">{{book.isbn}}</div>
+        </div>
+    </div>
+    <div class="book__text">
+        <h5>Kitob tasnifi</h5>
+        {{book.text}}
+    </div>
+</div>
+
+
+<script>
+
+</script>

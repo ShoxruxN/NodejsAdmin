@@ -1,0 +1,63 @@
+<div class="container">
+   <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+         <div class="row">
+            <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+            <div class="col-lg-7">
+               <div class="p-5">
+                  <div class="text-center">
+                     <h1 class="h4 text-gray-900 mb-4">Ro'yhatdan o'tish!</h1>
+                  </div>
+                  <form action="/auth/reg" method="post" class="user">
+                     <input type="hidden" name="_csrf" value="{{csrf}}">
+                     <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                           <input type="text" class="form-control form-control-user"
+                           name='name' placeholder="Ism">
+                        </div>
+                        <div class="col-sm-6">
+                           <input type="text" class="form-control form-control-user" 
+                           name="lname" placeholder="Familiya">
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <input type="email" class="form-control form-control-user" name="email"
+                           placeholder="Email">
+                     </div>
+                     <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                           <input type="password" class="form-control form-control-user" name="password" placeholder="Mahfiy kalit">
+                        </div>
+                        <div class="col-sm-6">
+                           <input type="password" class="form-control form-control-user" name="rpassword" placeholder="Mahfiy kalitni qayta yozing">
+                        </div>
+                     </div>
+                     <button type="submit" class="btn btn-primary btn-user btn-block">
+                        Ro'yhatdan o'tish
+                     </button>
+
+                  </form>
+                  <hr>
+                  {{!-- <div class="text-center">
+                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                            </div> --}}
+                  <div class="text-center">
+                     <a class="small" href="/auth/login">Akkaunt bormi? Tizimga kiring!</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   {{#if error}}
+  <div class="row justify-content-center">
+    <div class="col-xl-5 col-lg-5 col-md-5">
+      <div class="card bg-danger text-white shadow">
+          <div class="card-body">
+              {{error}}
+          </div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</div>

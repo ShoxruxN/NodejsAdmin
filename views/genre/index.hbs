@@ -1,0 +1,55 @@
+<div class="d-flex mb-4 align-items-center">
+    <h4 class="text-gray-900">Yangi janrni kiritish</h4>
+{{#if error}}
+  <div href="#" class="btn btn-warning btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-exclamation-triangle"></i>
+        </span>
+        <span class="text">{{error}}</span>
+    </div>
+  {{/if}}
+  {{#if success}}
+  <div href="#" class="btn btn-success btn-icon-split">
+        <span class="icon text-white-50"><i class="fas fa-check"></i></span>
+        <span class="text">{{success}}</span>
+    </div>
+  {{/if}}
+  </div>
+<form action="/genre/" method="post" class="user">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="name" placeholder="Janrni kiriting" required>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <button type="submit" class="btn btn-primary btn-user btn-block">Kiritish</button>
+        </div>
+    </div>
+</form>
+<hr>
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Janr nomi</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each genres}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{name}}</td>
+                <td>
+                    <a href="/genre/del/{{_id}}" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </table>
+</div>

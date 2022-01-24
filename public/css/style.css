@@ -1,0 +1,46 @@
+.form-group select {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d1d3e2;
+    border-radius: .35rem;
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: 0.89rem 1rem;
+    appearance: none;
+    background-image: url(../img/angle-arrow-down.png);
+    background-size: 12px;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+}
+.form-group select:focus{
+    outline: unset;
+}
+.book__view img {
+    width: 100%;
+}
+.book__title {
+    font-size: 16px;
+    color: #000;
+}
+.book__value {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+.book__text {
+    padding: 20px 0px;  
+    font-size: 18px;
+    color: #000;
+    line-height: 32px;
+}
+.book__text h5 {
+    font-size: 24px;
+    color: #000;
+}
+h1,
+table.table td:first-child{
+    text-transform: capitalize;
+}
